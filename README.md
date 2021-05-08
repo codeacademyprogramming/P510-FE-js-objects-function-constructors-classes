@@ -25,7 +25,7 @@
 * https://javascript.info/task/is-empty
 * https://javascript.info/task/sum-object
 * https://javascript.info/task/multiply-numeric
-* Implement the CustomMath class
+* Implement CustomMath as a function constructor and as a Class
 ```js 
 const number = new CustomMath(100);
 const result = number.minus(30).plus(50).multiply(3).divide(5);
