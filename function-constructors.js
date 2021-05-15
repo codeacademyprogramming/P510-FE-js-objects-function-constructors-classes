@@ -137,12 +137,38 @@ class MyArrayType extends Array {
 
 const arr = new MyArrayType(1,2,3,4,5,6);
 
-console.log(arr.findMax());
+// console.log(arr.findMax());
 
 
-Math.max(2,34,5,6,325,353);
-// 353
+Math.max(2,34,5,6,325,353); //353 
 
-const number = new CustomMath(100);
+class CustomMath {
+    constructor (number) {
+        this.number = number;
+    }
 
-const result = number.minus(30).plus(50).multiply(3).divide(5);
+    minus (n) {
+        return new CustomMath(this.number - n); // type is object
+    }
+
+    plus (n) {
+        return new CustomMath(this.number + n);
+    }
+
+    multiply (n) {
+        return new CustomMath(this.number * n);
+    }
+    
+    divide (n) {
+        return new CustomMath(this.number / n);
+    }
+
+    toString () {
+        return this.number;
+    }
+}
+
+
+const number = new CustomMath(100); // {number: 100}
+const result = number.minus(30).plus(50).multiply(2).divide(6).toString();
+console.log(result);
